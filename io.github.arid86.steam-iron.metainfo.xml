@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.arid86.steam-iron</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+  <name>Steam Iron</name>
+  <summary>A GNOME menu editor for Steam .desktop shortcut files</summary>
+
+  <developer id="io.github.arid86">
+    <name>Arid86</name>
+  </developer>
+
+  <description>
+    <p>A file manager for Steam .desktop files. Hide, delete and edit Steam shortcuts. Download icons and scan StartupWMClasses.</p>
+  </description>
+
+  <launchable type="desktop-id">io.github.arid86.steam-iron.desktop</launchable>
+
+  <url type="homepage">https://github.com/Arid86/Steam-Iron</url>
+  <url type="bugtracker">https://github.com/Arid86/Steam-Iron/issues</url>
+  <url type="vcs-browser">https://github.com/Arid86/Steam-Iron</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main window showing Steam shortcut management</caption>
+      <image>https://raw.githubusercontent.com/Arid86/Steam-Iron/master/screenshots/Screenshot.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <caption>Icon picker, showing steamgridDB integration</caption>
+      <image>https://raw.githubusercontent.com/Arid86/Steam-Iron/master/screenshots/Screenshot%202.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <caption>WMClass Picker, showing scanned game processes.</caption>
+      <image>https://raw.githubusercontent.com/Arid86/Steam-Iron/master/screenshots/Screenshot%203.png</image>
+    </screenshot>
+  </screenshots>
+  
+  <categories>
+    <category>Utility</category>
+    <category>Game</category>
+  </categories>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="1.0" date="2026-11-20" />
+  </releases>
+</component>

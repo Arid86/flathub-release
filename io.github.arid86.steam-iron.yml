@@ -1,0 +1,57 @@
+app-id: io.github.arid86.steam-iron
+runtime: org.gnome.Platform
+runtime-version: '51'
+sdk: org.gnome.Sdk
+command: steam-iron
+
+finish-args:
+    - --share=ipc
+    - --socket=wayland
+    - --socket=fallback-x11
+    - --device=dri
+
+    - --share=network
+
+    - --filesystem=/tmp:rw
+    - --filesystem=xdg-data/applications:rw
+
+    - --talk-name=org.freedesktop.secrets
+    - --talk-name=org.freedesktop.Flatpak
+modules:
+    - python-keyring.json
+
+    - name: Steam Iron
+      buildsystem: simple
+      build-commands:
+        - sed -i 's/com\.github\.steam_iron/io.github.arid86.steam-iron/g' main.py
+        - mkdir -p /app/share/steam-iron
+        - cp -r main.py configManager.py gridDBHelper.py gridDBSelector.py preferencesWindow.py wmClassHelper.py wmClassSelector.py style.css blacklists /app/share/steam-iron
+
+        - install -Dm755 io.github.arid86.steam-iron.sh /app/bin/steam-iron
+        - install -Dm644 io.github.arid86.steam-iron.desktop /app/share/applications/io.github.arid86.steam-iron.desktop
+        - install -Dm644 io.github.arid86.steam-iron.metainfo.xml /app/share/metainfo/io.github.arid86.steam-iron.metainfo.xml
+
+        - install -Dm644 io.github.arid86.steam-iron-64.png /app/share/icons/hicolor/64x64/apps/io.github.arid86.steam-iron.png
+        - install -Dm644 io.github.arid86.steam-iron-128.png /app/share/icons/hicolor/128x128/apps/io.github.arid86.steam-iron.png
+        - install -Dm644 io.github.arid86.steam-iron-256.png /app/share/icons/hicolor/256x256/apps/io.github.arid86.steam-iron.png
+        - install -Dm644 io.github.arid86.steam-iron-512.png /app/share/icons/hicolor/512x512/apps/io.github.arid86.steam-iron.png
+
+      sources:
+        - type: git
+          url: https://github.com/Arid86/Steam-Iron.git
+          tag: v1.0
+          commit: 71fc2346cdaa6cccce2b92df7c771b29b7fdc11b
+        - type: file
+          path: io.github.arid86.steam-iron.sh
+        - type: file
+          path: io.github.arid86.steam-iron.desktop
+        - type: file
+          path: io.github.arid86.steam-iron.metainfo.xml
+        - type: file
+          path: io.github.arid86.steam-iron-64.png
+        - type: file
+          path: io.github.arid86.steam-iron-128.png
+        - type: file
+          path: io.github.arid86.steam-iron-256.png
+        - type: file
+          path: io.github.arid86.steam-iron-512.png

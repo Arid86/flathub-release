@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Steam Iron
+Comment=Manage Steam .desktop shortcuts, icons, WMCLasses
+Exec=steam-iron
+Icon=io.github.arid86.steam-iron
+Terminal=false
+Type=Application
+Categories=Utility;Game;GTK
+StartupNotify=true
+StartupWMClass=io.github.arid86.steam-iron
